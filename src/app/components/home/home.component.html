@@ -1,55 +1,16 @@
-<h1>Seja Bem Vindo CarrosLar</h1>
-<h4 class="text-danger">{{ anuncio }}</h4>
 
-<div class="container-fluid">
-    <div class="card" style="width: 18rem">
-      <img [src]="foto" class="card-img-top" alt="fotocarro" />
-      <div class="card-body">
-        <h5 class="card-title">
-          {{ nomeProduto | uppercase }}<br />
-          <span *ngIf="promocao; else elseBlock" class="badge badge-success"
-            >Promoção</span
-          >
-          <ng-template #elseBlock>
-            <span class="badge badge-success">Aproveite</span>
-          </ng-template>
-        </h5>
-        <p class="card-text">
-          Identificação: {{ idProduto | number : "2.0-0" }}<br />
-          Validade: {{ dataValidade | date : "shortDate" }}
-        </p>
-        <a href="#" class="btn btn-primary float-right">
-          {{ precoProduto | currency : "BRL" }}</a
-        >
-      </div>
-    </div>
-    <div class="card" style="width: 18rem">
-      <img [src]="foto" class="card-img-top" alt="fotocarro" />
-      <div class="card-body">
-        <h5 class="card-title">
-          {{ nomeProduto | uppercase }}<br />
-          <span *ngIf="promocao; else elseBlock" class="badge badge-success"
-            >Promoção</span
-          >
-          <ng-template #elseBlock>
-            <span class="badge badge-success">Aproveite</span>
-          </ng-template>
-        </h5>
-        <p class="card-text">
-          Identificação: {{ idProduto | number : "2.0-0" }}<br />
-          Validade: {{ dataValidade | date : "shortDate" }}
-        </p>
-        <a href="#" class="btn btn-primary float-right">
-          {{ precoProduto | currency : "BRL" }}</a
-        >
-      </div>
-    </div>
-<h1>Seja Bem Vindo</h1>
+<h1>Seja Bem Vindo CarrosLar</h1>
+
+<h4 class="text-danger" >{{anuncio}}</h4>
 <div class="row">
   <div class="col">
-    <img class="img-fluid" src="assets/carros.png">
-  </div>
-  <div class="col">
-    <img class="img-fluid" src="/assets/motos.png">
+    <app-card-produto
+    [foto]="foto"
+    [nomeProduto]="nomeProduto"
+    [promocao]="promocao"
+    [idProduto]="idProduto"
+    [dataValidade]="dataValidade"
+    [precoProduto]="precoProduto"
+  ></app-card-produto>
   </div>
 </div>
